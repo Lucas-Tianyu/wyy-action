@@ -102,7 +102,7 @@ res=s.post(url,protect(json.dumps(postdata)))
 object=json.loads(res.text,strict=False)
 if object['code']==200:
     print("刷单成功！共"+str(count)+"首")
-    data={"text" :"网易云音乐签到刷单简报",
+    data={"text" :"网易云音乐签到刷单任务简报",
           "desp":f"""
 ------
 
