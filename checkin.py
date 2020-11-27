@@ -102,18 +102,16 @@ res=s.post(url,protect(json.dumps(postdata)))
 object=json.loads(res.text,strict=False)
 if object['code']==200:
     print("刷单成功！共"+str(count)+"首")
-    data={"text" :"运行成功",
+    data={"text" :"网易云音乐签到刷单简报",
           "desp":f"""
 ------
 
-#### 🚀Deadline:
+#### 任务总结
 ```
-考研倒计时--天
+签到已完成
+刷单成功！共"+str(count)+"首"
 ```
->
-> 
->
->期待你给项目的star✨
+
 """
 }
     sckey=input()
