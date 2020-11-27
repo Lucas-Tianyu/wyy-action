@@ -102,7 +102,20 @@ res=s.post(url,protect(json.dumps(postdata)))
 object=json.loads(res.text,strict=False)
 if object['code']==200:
     print("刷单成功！共"+str(count)+"首")
-    data={"text" :"运行成功"}
+    data={"text" :"运行成功",
+          "desp":f"""
+------
+
+#### 🚀Deadline:
+```
+考研倒计时--{date}天
+```
+>
+> [GitHub项目地址](https://github.com/ReaJason/WeiBo_SuperTopics) 
+>
+>期待你给项目的star✨
+"""
+}
     sckey=input()
     url_server="https://sc.ftqq.com/"+sckey+".send"
     r = requests.post(url_server, data=data)
