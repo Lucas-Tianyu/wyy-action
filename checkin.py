@@ -103,7 +103,7 @@ object=json.loads(res.text,strict=False)
 if object['code']==200:
     print("刷单成功！共"+str(count)+"首")
     data={"text" :"运行成功",
-          "desp":"""
+          "desp":f"""
 ------
 
 #### 🚀Deadline:
