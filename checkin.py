@@ -102,8 +102,12 @@ res=s.post(url,protect(json.dumps(postdata)))
 object=json.loads(res.text,strict=False)
 if object['code']==200:
     print("刷单成功！共"+str(count)+"首")
-    data={"sckey":input()}
+    data={"text" :"运行成功"}
+    sckey=input()
+    url_server="https://sc.ftqq.com/"+sckey+".send"
+    r = requests.post(url_server, data=data)
     exit()
 else:
+    data={"sckey":input()}
     print("发生错误："+str(object['code'])+object['message'])
     exit(object['code'])
